@@ -1,0 +1,145 @@
+
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="container_wrap">
+		<div class="header_top">
+		    <div class="col-sm-3 logo"><a href="/adminhome"><img style="  border: 1px solid #ddd;border-radius: 4px;padding: 5px;width: 60px;"src="../static/images/fynd_1.png" alt=""/></a></div>
+		    <div class="col-sm-6 nav">
+				<h2>Welcome to Movie Review app</h2>
+			</div>
+			<div class="col-sm-3 header_right">
+			   <ul class="header_right_box">
+				 <li><p>{{user}}</p></li>
+				 <li><a href="/dropsession" class="btn btn-info" role="button">Logout</a></li>
+				 <div class="clearfix"> </div>
+			   </ul>
+			</div>
+			<div class="clearfix"> </div>
+	      </div>
+	      <div class="slider">
+	   <div class="callbacks_container">
+	      <ul class="rslides" id="slider">
+	        <li><img src="../static/images/banner.jpg" class="img-responsive" alt=""/>
+			</li>
+	        <li><img src="../static/images/banner1.jpg" class="img-responsive" alt=""/>
+			</li>
+	        <li><img src="../static/images/banner2.jpg" class="img-responsive" alt=""/>
+			</li>
+	      </ul>
+	    </div>
+	    <div class="banner_desc">
+			    	<div class="col-md-9">
+			    		<ul class="list_1">
+			    			<li>Published <span class="m_1">Feb 20, 2015</span></li>
+			    			<li>Updated <span class="m_1">Feb 20 2015</span></li>
+			    			<li>Rating <span class="m_1"><img src="../static/images/rating.png" alt=""/></span></li>
+			    		</ul>
+			    	</div>
+			    	<div class="col-md-3 grid_1">
+			    		<ul class="list_1 list_2">
+			    			<li><i class="icon1"> </i><p>2,548</p></li>
+			    			<li><i class="icon2"> </i><p>215</p></li>
+			    			<li><i class="icon3"> </i><p>546</p></li>
+			    		</ul>
+			    	</div>
+			    </div>
+      </div>
+
+<h3>
+	{% if new %}
+	<div class="content">
+		<h1 class="m_2"> new review </h1>
+	</div>
+	{% else %}
+	<div class="content">
+		<h1 class="m_2"> {{name}} </h1>
+	</div>
+	{% endif %}
+</h3>
+<div class="content">
+  <div class="box_1">
+   <h1 class="m_2">Featurd Movies</h1>
+   <div class="search">
+  <form>
+  </form>
+
+</div>
+<div class="clearfix"> </div>
+</div>
+<section class="contact-wrap">
+  <form action="" method="POST" class="contact-form" enctype="multipart/form-data">
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="name">Movie Name</label>
+        <input name ="name" type="text" class="form-control" id="name" placeholder="name" value= {{name}}>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="director">Director Name</label>
+        <input  name ="director" type="text" class="form-control" id="director" placeholder="director"  value= {{director}}>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="imdb">IMDB Rating</label>
+        <input  name ="imdb" type="number" step="0.01" class="form-control" id="imdb" placeholder="imdb" value= {{imdb}} >
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="popularity">Popularity</label>
+        <input  name ="popularity" type="number" step="0.01" class="form-control" id="popularity" placeholder="popularity" value= {{popularity}} >
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="genre">Genre</label>
+        <input  name ="genre" type="text" class="form-control" id="genre" placeholder="genre" value= {{genre}} >
+      </div>
+	</div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="image">Image</label>
+        <input  name ="image" type="text" class="form-control" id="image" placeholder="image"  value= "{{image}}" >
+      </div>
+	</div>
+	<div class="col-sm-12">
+		<div class="input-block">
+			<label for="cast">Cast</label>
+			<input  name ="cast" type="text" class="form-control" id="cast" placeholder="cast"  value= "{{cast}}" >
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="input-block">
+		<label for="age">Age Restriction</label>
+		<input  name ="age" type="text" class="form-control" id="age" placeholder="age"  value= "{{age}}" >
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="input-block">
+			<label for="date">Release Date</label>
+			<input  name ="date" type="Date" class="form-control" id="date" placeholder="date"  value= "{{date}}" >
+    	</div>
+	</div>	
+	<div class="col-sm-12">
+		<div class="input-block">
+			<label for="description">Movie Description</label>
+			<input class="form-control input-lg" name ="description" id="description" value= "{{description}}"></textarea>
+		</div>
+	</div>	
+    <div class="col-sm-12">
+      <button class="square-button">Send</button>
+    </div>
+  </form>
+</section>
+
+<div class="clearfix"> </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

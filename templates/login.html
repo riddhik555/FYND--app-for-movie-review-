@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="container_wrap">
+		<div class="header_top">
+		    <div class="col-sm-3 logo"><img style="  border: 1px solid #ddd;border-radius: 4px;padding: 5px;width: 60px;"src="../static/images/fynd_1.png" alt=""/></div>
+		    <div class="col-sm-6 nav">
+			  <h2>Fynd Movie Review App</h2>
+			</div>
+			<div class="clearfix"> </div>
+	      </div>
+	      <div class="content">
+      	     <div class="register">
+			   <div class="col-md-6 login-left">
+			  	 <h3>New User</h3>
+				 <p>By creating an account with our application, you will be able to view the details and review of the movies</p>
+				 <a class="acount-btn" href="/register">Create an Account</a>
+			   </div>
+			   <div class="col-md-6 login-right">
+			  	<h3>Registered Users</h3>
+				<p>If you have an account with us, please log in.</p>
+				<form action ="/login" method="POST">
+				  <div>
+					<label>Username</label>
+					<div class="input-group" id="username">
+						<input class="form-control" type="username" name = "username">
+				  </div>
+				  </div>
+				  <div>
+					<label>Password</label>
+    				<div class="input-group" id="show_hide_password">
+      					<input class="form-control" type="password" name = "password">
+    				</div>
+					
+				  </div>
+				  <a class="forgot" href="#">Forgot Your Password?</a>
+				  <input type="submit" value="Login">
+			    </form>
+				{% if error %}
+      				<p class="text-danger"><strong>Error:</strong> {{ error }}
+  				{% endif %}
+			   </div>	
+			   <div class="clearfix"> </div>
+		     </div>
+           </div>
+    </div>
+</div>
+<div class="container"> 
+ <footer id="footer">
+ 	<div id="footer-3d">
+		<div class="gp-container">
+			<span class="first-widget-bend"> </span>
+		</div>		
+	</div>
+    <div id="footer-widgets" class="gp-footer-larger-first-col">
+		<div class="gp-container">
+            <div class="footer-widget footer-1">
+            	<div class="wpb_wrapper">
+					<div class="col-sm-3 logo"><img style="  border: 1px solid #ddd;border-radius: 4px;padding: 5px;width: 60px;"src="../static/images/fynd_1.png" alt=""/>Fynd Movie Review</div>
+				</div> 
+		</div>
+	</div>
+  </footer>
+</div>		
+{% endblock %}

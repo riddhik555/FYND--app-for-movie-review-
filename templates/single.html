@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="container_wrap">
+		<div class="header_top">
+			{% if show_hidden %}
+			<div class="col-sm-3 logo"><a href="/adminhome"><img style="  border: 1px solid #ddd;border-radius: 4px;padding: 5px;width: 60px;"src="../static/images/fynd_1.png" alt=""/></a></div>
+			{% else %}
+			<div class="col-sm-3 logo"><a href="home"><img style="  border: 1px solid #ddd;border-radius: 4px;padding: 5px;width: 60px;"src="../static/images/fynd_1.png" alt=""/></a></div>
+			{% endif %}
+		    <div class="col-sm-6 nav">
+			  <h1>{{movie.name}} Details</h1>
+			</div>
+			<div class="col-sm-3 header_right">
+			   <ul class="header_right_box">
+				 <li><p>{{user}}</a></p></li>
+				 <li><a href="/dropsession" class="btn btn-info" role="button">Logout</a></li>
+				 <div class="clearfix"> </div>
+			   </ul>
+			</div>
+			<div class="clearfix"> </div>
+	      </div>
+	   <div class="content">
+      	   <div class="movie_top">
+      	         <div class="col-md-9 movie_box">
+                        <div class="grid images_3_of_2">
+                        	<div class="movie_image">
+                                <span class="movie_rating">{{movie.imdb}}</span>
+                                <img src="{{movie.image}}" class="img-responsive" alt=""/>
+                            </div>
+                            <div class="movie_rate">
+                            	<div class="rating_desc"><p>Your Vote :</p></div>
+                            	<form action="" class="sky-form">
+							     <fieldset>					
+								   <section>
+								     <div class="rating">
+										<input type="radio" name="stars-rating" id="stars-rating-5">
+										<label for="stars-rating-5"><i class="icon-star"></i></label>
+										<input type="radio" name="stars-rating" id="stars-rating-4">
+										<label for="stars-rating-4"><i class="icon-star"></i></label>
+										<input type="radio" name="stars-rating" id="stars-rating-3">
+										<label for="stars-rating-3"><i class="icon-star"></i></label>
+										<input type="radio" name="stars-rating" id="stars-rating-2">
+										<label for="stars-rating-2"><i class="icon-star"></i></label>
+										<input type="radio" name="stars-rating" id="stars-rating-1">
+										<label for="stars-rating-1"><i class="icon-star"></i></label>
+									 </div>
+								  </section>
+							    </fieldset>
+						  	   </form>
+						  	   <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        <div class="desc1 span_3_of_2">
+                        	<p class="movie_option"><strong>Movie Name: </strong> <a href="#">{{movie.name}}</a></p>
+                        	<p class="movie_option"><strong>Category: </strong>{{movie.genre}}</p>
+                        	<p class="movie_option"><strong>Release date: </strong>{{movie.release_date}}</p>
+                        	<p class="movie_option"><strong>Director: </strong><a href="#">{{movie.director}} </a></p>
+                        	<p class="movie_option"><strong>Cast: </strong>{{movie.cast}}</p>
+                            <p class="movie_option"><strong>Age restriction: </strong>{{movie.age_restriction}}</p> 
+                            <div class="down_btn"><span> </span>Download</div>
+                         </div>
+                        <div class="clearfix"> </div>
+                        <p class="m_4">{{movie.description}}</p>
+                      </div>
+                      
+                      <div class="clearfix"> </div>
+                  </div>
+           </div>
+    </div>
+</div>		
+{% endblock %}
